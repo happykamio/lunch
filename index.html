@@ -31,32 +31,32 @@
 
       <div class="col-sm">
         <div>
-          <iframe src="https://goo.gl/forms/HJff7jAeCcyVWvcD3" width="100%" height="1300" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+          <iframe src="https://goo.gl/forms/CU62KeFf5uwHJzcg2" width="100%" height="1300" frameborder="0" marginheight="0" marginwidth="0"></iframe>
         </div>
       </div>
       <script>
         $(function () {
           var timestamp = [];
           var name = [];
-          var order = [];
-          $.getJSON('https://spreadsheets.google.com/feeds/list/14WJtyY1A1TY3BrUXrctDtj1XyrAbnTuRLeKbSASJ_1k/oj3myn7/public/values?alt=json', function (data) {
+          var people = [];
+          $.getJSON('https://spreadsheets.google.com/feeds/list/1gznwm9pfW7zwfZFd50cYZyEBHXeOQz3iPV90nVqBgyk/opicjyq/public/values?alt=json', function (data) {
             for (var i = 0; i < data.feed.entry.length; i++) {
               timestamp[i] = data.feed.entry[i].gsx$timestamp.$t;
               name[i] = data.feed.entry[i].gsx$name.$t;
-              order[i] = data.feed.entry[i].gsx$order.$t;
-              $('#producttable').append("<tr><td>" + timestamp[i] + "</td><td>" + name[i] + "</td><td>" + order[i] + "</td></tr>");
+              people[i] = data.feed.entry[i].gsx$people.$t;
+              $('#producttable').append("<tr><td>" + timestamp[i] + "</td><td>" + name[i] + "</td><td>" + people[i] + "</td></tr>");
             }
           });
         });
       </script>
       <div class="container my-5">
-        <h1 class="text-center">點餐回覆表</h1>
-        <table class="table table-dark table-striped table-bordered table-hover table-sm ">
+        <h1 class="text-center">統計人數LIST</h1>
+        <table class="table table-info table-striped table-bordered table-hover table-sm ">
           <thead>
             <tr>
               <th scope="col">時間戳記</th>
               <th scope="col">姓名</th>
-              <th scope="col">點餐</th>
+              <th scope="col">參加人數</th>
             </tr>
           </thead>
           <tbody id="producttable">
