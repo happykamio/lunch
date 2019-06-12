@@ -38,13 +38,19 @@
         $(function () {
           var timestamp = [];
           var name = [];
-          var people = [];
+          var main = [];
+          var side = [];
+          var other = [];
+
           $.getJSON('https://spreadsheets.google.com/feeds/list/1gznwm9pfW7zwfZFd50cYZyEBHXeOQz3iPV90nVqBgyk/opicjyq/public/values?alt=json', function (data) {
             for (var i = 0; i < data.feed.entry.length; i++) {
               timestamp[i] = data.feed.entry[i].gsx$timestamp.$t;
               name[i] = data.feed.entry[i].gsx$name.$t;
-              people[i] = data.feed.entry[i].gsx$people.$t;
-              $('#producttable').append("<tr><td>" + timestamp[i] + "</td><td>" + name[i] + "</td><td>" + people[i] + "</td></tr>");
+              main[i] = data.feed.entry[i].gsx$main.$t;
+              side[i] = data.feed.entry[i].gsx$side.$t;
+              other[i] = data.feed.entry[i].gsx$other.$t;
+
+              $('#producttable').append("<tr><td>" + timestamp[i] + "</td><td>" + name[i] + "</td><td>" + main[i] + "</td></tr> + "</td > <td>" + side[i] + "</td> <td>" + other[i] + "</td></tr > ");
             }
           });
         });
@@ -56,7 +62,10 @@
             <tr>
               <th scope="col">時間戳記</th>
               <th scope="col">姓名</th>
-              <th scope="col">參加人數</th>
+              <th scope="col">主餐</th>
+              <th scope="col">+138套餐</th>
+              <th scope="col">其它</th>
+
             </tr>
           </thead>
           <tbody id="producttable">
