@@ -44,7 +44,7 @@
                     var memo = [];
 
 
-                    $.getJSON('https://spreadsheets.google.com/feeds/list/1gznwm9pfW7zwfZFd50cYZyEBHXeOQz3iPV90nVqBgyk/opicjyq/public/values?alt=json', function (data) {
+                    $.getJSON('https://spreadsheets.google.com/feeds/list/1gznwm9pfW7zwfZFd50cYZyEBHXeOQz3iPV90nVqBgyk/public/values?alt=json', function (data) {
                         for (var i = 0; i < data.feed.entry.length; i++) {
                             timestamp[i] = data.feed.entry[i].gsx$timestamp.$t;
                             name[i] = data.feed.entry[i].gsx$name.$t;
