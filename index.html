@@ -51,9 +51,9 @@
                             people[i] = data.feed.entry[i].gsx$people.$t;
 
                            
-                            memo[i] = data.feed.entry[i].gsx$memo.$t;
+                           
 
-                            $('#producttable').append("<tr><td>" + timestamp[i] + "</td><td>" + name[i] + "</td><td>" + people[i] + "</td><td>" + memo[i] + "</td></tr>");
+                            $('#producttable').append("<tr><td>" + timestamp[i] + "</td><td>" + name[i] + "</td><td>" + people[i] + "</td><td>" );
                         }
                     });
                 });
@@ -68,7 +68,7 @@
                             <th scope="col">人數</th>
 
                            
-                            <th scope="col">備註(如有不吃牛或素食者，請備註，謝謝)</th>
+                            
 
 
 
