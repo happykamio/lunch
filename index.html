@@ -1,32 +1,20 @@
-<!doctype html>
+
+<!DOCTYPE HTML>
 <html lang="zh-Hant-TW">
-<!-- 結果show在自製網頁 -->
+<!--直接看到googe excel -->
 
 <head>
-    <!-- Required meta tags -->
+    <!--必需的 meta tag -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous">
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-3.0.1.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-    <title>eating</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossori <title>午餐調查表01</title>
 </head>
 
 <body>
     <div class="container">
+
         <div class="row">
 
             <div class="col-sm">
@@ -34,56 +22,34 @@
                     <iframe src="https://forms.gle/SfqxGduzBWEmFbet6" width="100%" height="1300" frameborder="0" marginheight="0" marginwidth="0"></iframe>
                 </div>
             </div>
-            <script>
-                $(function () {
-                    var timestamp = [];
-                    var name = [];
-                    var people = [];
-
-                   
-                   
 
 
-                    $.getJSON('https://spreadsheets.google.com/feeds/list/e/1/public/values?alt=json', function (data) {
-                        for (var i = 0; i < data.feed.entry.length; i++) {
-                            timestamp[i] = data.feed.entry[i].gsx$timestamp.$t;
-                            name[i] = data.feed.entry[i].gsx$name.$t;
-                            people[i] = data.feed.entry[i].gsx$people.$t;
-
-                           
-                           
-
-                            $('#producttable').append("<tr><td>" + timestamp[i] + "</td><td>" + name[i] + "</td><td>" + people[i] + "</td><td>" );
-                        }
-                    });
-                });
-            </script>
-            <div class="container my-5">
-                <h1 class="text-center">點餐</h1>
-                <table class="table table-dark table-striped table-bordered table-hover table-sm ">
-                    <thead>
-                        <tr>
-                            <th scope="col">時間戳記</th>
-                            <th scope="col">姓名</th>
-                            <th scope="col">人數</th>
-
-                           
-                            
-
-
-
-                        </tr>
-                    </thead>
-                    <tbody id="producttable">
-                    </tbody>
-                </table>
-
+            <div class="col-sm">
+                <div>
+                    <iframe src="https://docs.google.com/spreadsheets/d/1hwQG5hQ-2WNCeOza5JVxoM6zUZKfqPaOg54oNJL3KfU/edit#gid=44282228" width="100%"
+                        height="800" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+                </div>
             </div>
-
         </div>
+
+
+
+
+
+
+
+
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
     <script>
         $(document).ready(function () {
             $('.container').css('width', $(window).width());
@@ -94,6 +60,8 @@
             $('.container').css('height', $(window).height());
         });
     </script>
+
+
 
 </body>
 
