@@ -39,7 +39,7 @@
           var timestamp = [];
           var name = [];
           var order = [];
-          $.getJSON('https://spreadsheets.google.com/feeds/list/14WJtyY1A1TY3BrUXrctDtj1XyrAbnTuRLeKbSASJ_1k/oj3myn7/public/values?alt=json', function (data) {
+          $.getJSON('https://docs.google.com/spreadsheets/d/e/2PACX-1vRuY2c6iARLU9LDD1-a3WmhGltFKiX5c1aR3ena0w0_Ue7RnduOGPmR_pIMSV874JROk1Cq15YmBUc9/pubhtml', function (data) {
             for (var i = 0; i < data.feed.entry.length; i++) {
               timestamp[i] = data.feed.entry[i].gsx$timestamp.$t;
               name[i] = data.feed.entry[i].gsx$name.$t;
