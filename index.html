@@ -12,56 +12,62 @@
         crossori <title>調查表</title>
 </head>
 
-<body>
-    <div class="container">
+<<body>
+  <div class="container">
+    <div class="row">
 
-        <div class="row">
-
-            <div class="col-sm">
-                <div>
-                    <iframe src="https://forms.gle/SfqxGduzBWEmFbet6" width="100%" height="1300" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-                </div>
-            </div>
-
-
-            <div class="col-sm">
-                <div>
-                    <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRuY2c6iARLU9LDD1-a3WmhGltFKiX5c1aR3ena0w0_Ue7RnduOGPmR_pIMSV874JROk1Cq15YmBUc9/pubhtml" width="100%"
-                        height="800" frameborder="0" marginheight="0" marginwidth="0"></iframe>
-                </div>
-            </div>
+      <div class="col-sm">
+        <div>
+          <iframe src="https://forms.gle/SfqxGduzBWEmFbet6" width="100%" height="1300" frameborder="0" marginheight="0" marginwidth="0"></iframe>
         </div>
+      </div>
+      <script>
+        $(function () {
+          var timestamp = [];
+          var name = [];
+          var order = [];
+          $.getJSON('https://spreadsheets.google.com/feeds/list/14WJtyY1A1TY3BrUXrctDtj1XyrAbnTuRLeKbSASJ_1k/oj3myn7/public/values?alt=json', function (data) {
+            for (var i = 0; i < data.feed.entry.length; i++) {
+              timestamp[i] = data.feed.entry[i].gsx$timestamp.$t;
+              name[i] = data.feed.entry[i].gsx$name.$t;
+              order[i] = data.feed.entry[i].gsx$order.$t;
+              $('#producttable').append("<tr><td>" + timestamp[i] + "</td><td>" + name[i] + "</td><td>" + order[i] + "</td></tr>");
+            }
+          });
+        });
+      </script>
+      <div class="container my-5">
+        <h1 class="text-center">點餐回覆表02</h1>
+        <table class="table table-dark table-striped table-bordered table-hover table-sm ">
+          <thead>
+            <tr>
+              <th scope="col">時間戳記</th>
+              <th scope="col">姓名</th>
+              <th scope="col">人數</th> 
+               <th scope="col">選湯底+價格</th>
+              <th scope="col">選主餐+價格</th>
+            </tr>
+          </thead>
+          <tbody id="producttable">
+          </tbody>
+        </table>
 
-
-
-
-
-
-
+      </div>
 
     </div>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-
-
-    <script>
-        $(document).ready(function () {
-            $('.container').css('width', $(window).width());
-            $('.container').css('height', $(window).height());
-        });
-        $(window).resize(function () {
-            $('.container').css('width', $(window).width());
-            $('.container').css('height', $(window).height());
-        });
-    </script>
-
-
+  </div>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script>
+    $(document).ready(function () {
+      $('.container').css('width', $(window).width());
+      $('.container').css('height', $(window).height());
+    });
+    $(window).resize(function () {
+      $('.container').css('width', $(window).width());
+      $('.container').css('height', $(window).height());
+    });
+  </script>
 
 </body>
 
