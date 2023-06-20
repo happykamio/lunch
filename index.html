@@ -43,10 +43,11 @@
             for (var i = 0; i < data.feed.entry.length; i++) {
               timestamp[i] = data.feed.entry[i].gsx$timestamp.$t;
               name[i] = data.feed.entry[i].gsx$name.$t;
-              uum[i] = data.feed.entry[i].gsx$num.$t;
+              num[i] = data.feed.entry[i].gsx$num.$t;
+              pho[i] = data.feed.entry[i].gsx$pho.$t;
               soup[i] = data.feed.entry[i].gsx$soup.$t;
               main[i] = data.feed.entry[i].gsx$main.$t;
-              $('#producttable').append("<tr><td>" + timestamp[i] + "</td><td>" + name[i] + "</td><td>" + num[i] +"</td><td>" + soup[i] + "</td><td>"+ main[i] + "</td></tr>");
+              $('#producttable').append("<tr><td>" + timestamp[i] + "</td><td>" + name[i] + "</td><td>" + num[i] +"</td><td>"+ pho[i] +"</td><td>" + soup[i] + "</td><td>"+ main[i] + "</td></tr>");
             }
           });
         });
@@ -59,6 +60,7 @@
               <th scope="col">時間戳記</th>
               <th scope="col">姓名</th>
               <th scope="col">人數</th>
+              <th scope="col">手機</th>
               <th scope="col">選湯底+價格</th>              
               <th scope="col">選主餐+價格</th>
             </tr>
